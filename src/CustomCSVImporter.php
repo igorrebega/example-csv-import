@@ -171,6 +171,7 @@ class CustomCSVImporter
     /**
      * Write transaction data to property
      * @param $row
+     * @throws \InvalidArgumentException
      */
     private function storeTransactionForSave($row)
     {
@@ -220,7 +221,7 @@ class CustomCSVImporter
         $id = $this->generateBatchId($date, $refNum, $merchantId);
 
         if (!isset($this->lastBatches[$id]['id'])) {
-            throw new InvalidArgumentException('Those transaction already imported');
+            throw new InvalidArgumentException('Those transactions already imported');
         }
 
         return $this->lastBatches[$id]['id'];
