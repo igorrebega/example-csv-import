@@ -407,7 +407,7 @@ class CustomCSVImporter
             return;
         }
 
-        //If we last batch is saved then previous save too - so we don`t need to save them again
+        //If current batch is saved then previous batches is saved too - so we don`t need to save them again
         if (isset($this->lastBatches[$id])) {
             $this->batchesToSave = [];
             return;
