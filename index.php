@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$path = __DIR__ . '/report.csv';
+$path = __DIR__ . '/loremB.csv';
 
 $mapping = [
     CustomCSVImporter::MERCHANT_ID             => 'Merchant ID',
