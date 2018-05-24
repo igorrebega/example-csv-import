@@ -13,12 +13,14 @@ INNER JOIN card_types ON card_types.id = transactions.card_type_id
 
 GROUP BY card_types.name;
 
-SELECT merchants.name, COUNT(*), SUM(transactions.amount) FROM transactions
+SELECT card_types.name, COUNT(*), SUM(transactions.amount)  FROM transactions
 INNER JOIN batches ON batches.id = transactions.batch_id
 INNER JOIN merchants ON merchants.id = batches.merchant_id
 AND merchant_id = '112232864445369976'
+INNER JOIN card_types ON card_types.id = transactions.card_type_id
 WHERE transactions.date BETWEEN '2018-05-04' and '2018-05-04'
-GROUP BY merchants.id;
+
+GROUP BY card_types.name;
 
 SELECT
 	merchants. NAME,
